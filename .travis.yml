@@ -1,0 +1,48 @@
+language: java
+env:
+  global:
+    - # ^^ OSSRH_USERNAME
+    - secure: "XOBvN3Y/LDTIvZTrtWGE2a3zswyNouI2y1Kjd7YVW/QR5JKM0uywalI2Wozpvs97/v1Fl00Bs4H8l7OCBE9By91v981ZHtT8KthZZTrLnlzZyhWKGwRi5jWcXxy0SxfOd4m7BJu/LbbOssaXSfDMcXV5yZYhO4InGWrmhp4UmRA8TIVSqZ2keOtRL7GY4vG76GIcqbLR71w9n9tfPoJD+7qoKkv32I1Z38ZDCtUuydCb5QlKxSbQGX4Q4dqYbvkwV6h+LLZ8c6vDbhusL9sm74xUFeN6DX4uSBUcD2zV3QsJezfXMo5Dp1X7tCR9DrvPoMSvqur55JmP1Aqqyivjmakccb52mn1Kj9HL/tJBzaeyGY/l6D/ZP8Pq1xpUydKvjTNFjdcIx2vUbj2N1sPYgUYQM2q6m7ouHQlprjHzIh4xA+AWSCCK5p/5DXS0mn8psKfmu4/l5ArDwWYtqOXeNCkqO99nBvkpDPeov/AjjvjSN/DRshSGQja9DwKoVmvjBq0FyOyVfa7y1+JMrpTza+6b+69bRHrcZf+K7psnHGcGzUV54q+kCdDt2y5PTSWySLpc4ytAeeGJpTYx2Dj3GciB+3zZ0qPymCl1jGR49EjMLuZMGaqkDTK7VuqhQp2vZvZGuaMMWuXzmmjKJzV37EDHKA/V/cU0sz818TdUGqo="
+    - # ^^ OSSRH_PASSWORD
+    - secure: "DcQsAD+r0Jx0qbxKE+MAWGwngphu95v70QLv8s7zeMdDURQrmmdwZl8GpuS1qb0V9lzuQ0vDbnboT9hz8x3eP2Z+NgsosFvajgkcnH0zRkSQtOv1Wp2QdWumZEd390yYgrEXtbLELU8nNprbIYC63IIs7SgctJTJT3Q2s3UOvnp/LEpqTEGusVSkw2jjGvmd/llxjo2kq5h7cXPLcPgnJv0DB+exHQfAZpVF/er4dBRYqd9zkEDtc0rL+yd6M2KWTco/xye+w9JO1e1LoKevPv1ig19dRvqsqxXrgegDnCclpWMkPyR1qBCGvIttSGEALu3yKh1bS471+zbTUWEgM7jIv7Am9IUYSCUaxmYnxLGLbefn2RI4550nbuvPtmgzUUJ2aM4henG6e6QSwcDU6vlPmuxdpL1O/sVMMIvqPcA+GDoZHIWHh24XplzuHaZQABQj9hReLFX8gnQ1/+jsIUj9Yclvao4kHIYUwDE8MKWaPdZmIgxI7xIqv8aLotEldlccxeWnPNW587PpwCmcZKlGlojn4GsOStq/d1L3BToDHzRbmd1hD2jlJy0un4AIMs3Vw8VMmnSx+RAh8ZmnVnmClt9g3DULDqNU8UKLlFQrqZaJBFr4Nggrd/JryNANF6TZf8tlgOcArJo+c9WjSSPhkDjNwSNM13eFBPKoNcY="
+    - # ^^ GPG_KEY_NAME
+    - secure: "QbSyb+vXE9biXhzGb36JNqRqlZxvDPXmKA89rLYnMQujCXd2VGa175707oLc1RKg/McZTAFyIHLrdl4UgXPmYnhn9xxXoo/Ejx+SDmDUaCmEVrdkk0g91aWrULMkftG1HVNOdpEFfdn8YcwcrNo7T5SO8SP8AC+fBYkbm5LGgGxsawTFnz/64vUvVPJzbCIZ5dhe0aAS1ZP6tA113jhdP1rg3sBkeiC9ghw0f/BwfMnB1MI1fs05iidM5RLF6n1H7qxqZV9UeuunDNPHQOp8Xb1OfnzyTNOlvtAP/0rBB++5q1VlKyHu5lAUTxuqknHOZ6FKW2SOkCdAr83YKb3KRsx8nHFFVb3yBImXJXhX23jL24TEdUtoiQVu7lxOGFTV0zllHErQd6zL3xTv4uT+ujYC2+/JLvzxeSAcu4qL2vhBeEDPjiTNbAEswi2rmrJQ4W+5WlW2timFK+kh3K/uQ5105K5hiarXP+JJ8f77oysfhH/UXErknp3t0AxSg2JfTsbfsUsKh9/MUEEISUYtAH6ulJTKwqb4xwVUvBn381JEU8l+aQPmCXB5WvK8qaqxDjKwc/+WmPbdWtisWolHVgtE0wDcGpdn/zkQzaNksX8LrnNsfQH0goP3qZeGPDWFDOc53hI9IVWs5QNnelo2a2FqXwqmSe5k7jTANDgCqME="
+    - # ^^ GPG_PASSPHRASE
+    - secure: "BJmMCruisQiS2OfsOl7q7zjBYY91f6HoiDb1vC82hL5ozg/9Qkmxa2TM6NMeqdto1QivuBQ7XM7p2MpOWQqslJlQa99psgAY2LvQ4XJNt6xpL5aLuuWE88JIfwWwHx5xvMDkM40YYHRFetvDG/dANbG8Ebh8eqsD3IML7TkzRw/MYsQ6LhchA9gEGerJ8V/Kd5u5+W895pu896rO0GmRVJ2BAT8xBvmoB4cHjQE7Vs07hirA/IwWT5uqQkJwP5YsYu2CxdvVk5COlZyOtddtDVYtro6H09yG7Fu3MN8gn/eV/W0vJfVRKQU0GISBAWrQRCcHLtFdbAaKoTTAP7ot+Dn8V8CIrzp7DdP64iKWsTgq4t+WZ2azgSNGRIAyl/ITMCROqNWyluwI8y4YgMnaldLtJT+NvlEBJF3nKs0kqky+SZoRLYnHACpSOvh/3+TXj2Tr2yBeHAjLWSLJXIzm/TanGvTrw8L5XvNO32tWZMerebSfSBi+KQk8Gz7JOFqYTBTTAu4refwI1dM9W7WnugTJNp3kBGwee8DfiJHkQ81HC2OhDyFqnsurtFuxFMgWHF60KXQSxQ2rjSoUZeaBqqgfC0/SA3HYWAJN6kQTdYXrR12EvZd1b7F5kibb9HPSlyf+Xhexk0d54bkrN3XD/i4vs92ojmX18/3qacZ7qCM="
+    - # GITHUB_TOKEN
+    - secure: "OO6KBADSLH1iA83AIFLnQBDB8itsTB3cQNVaw5Y7fFq3/JKtLIlE7ZZjy2CNXep7hGP5gJj8xdI/wZ7nk36sHI+KCka+xLp04b/jTMu1878vJwpMONw1OAaHmddu7MxC93DwqhT6ytaXFLHzIwgz+MwzAPfqtJqR1+aIandh32qCdgzTbcTu+c44FLpfvEeXOsf8vN8veThz4suts1fjlqEPkKdGBAkngUKZ0rWYcIsv5boqugjAMspHCj4qzTkYbCUw2EJcVEKk1SNUeSWxhYWimzn7sgvZ6uluriPb8dufwc5lmgCAeghOmH1eMA7QpiOujphmdAWJ9CSgT/NvvCb8azcve7hsx16xvx2lme0NwHUiScK8s1k57culqB7CRdKCAEDjK1IvCq6Yakl1uPibC/+K482cNJtVDU6rE/TzTOqbL5xjamBUAvJYtA9r46pYsy5AsNf0v4Dv/eERw35JFouzYOaSWpNIBQtAWswubwz0bh2dqUd0Q0qRh8eUDFsKtfaGrla1/wlecFgYgK/jMtqbz5Z4enMA10MQPSTmjdnHPfm6KqO3QCiMhW98WPeWil1/Vrrwyl0Kl6aUt4vxBqbmIgrECgCOuFlcoXiIrW6RK2Jn3mSD16/nLWeGnPganF2pzHwrljqMWRREywzCA/pa8dvE6rKdaYceMHg="
+jdk:
+  - oraclejdk8
+before_install:
+  - source ci/setup-git.sh
+install: mvn clean install -P !ossrh -DskipTests=true -Dmaven.javadoc.skip=true -B -V -U  --settings ci/mvnsettings.xml
+script: mvn verify -P !ossrh -B --settings ci/mvnsettings.xml
+after_failure:
+  - find . -size +1k -regex  ".*-reports/.*\.txt" -exec cat {} +
+cache:
+  directories:
+    - ~/.m2/repository
+notifications:
+  email:
+    on_success: never
+    on_failure: never
+deploy:
+  - provider: script
+    skip-cleanup: true
+    script: bash ci/mvn-release.sh
+    on:
+      branch: master
+  - provider: script
+    skip-cleanup: true
+    script: bash ci/mvn-deploy.sh
+    on:
+      branch: develop
+  - provider: script
+    skip-cleanup: true
+    script: bash ci/mvn-deploy.sh
+    on:
+      tags: true
+addons:
+  apt:
+    packages:
+    - libxml2-utils
