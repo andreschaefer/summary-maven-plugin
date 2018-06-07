@@ -5,7 +5,7 @@ System        | Status
 --------------|------------------------------------------------        
 CI master     | [![Build Status][travis-master]][travis-url]
 CI develop    | [![Build Status][travis-develop]][travis-url]
-Dependency    | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.namics.oss.java.tools/java-tools/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.namics.oss.java.tools/java-tools)
+Dependency    | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.namics.oss.maven/summary-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.namics.oss.maven/summary-maven-plugin)
 
 
 Plugin that gathers test report files creates a summery.
