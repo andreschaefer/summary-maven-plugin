@@ -1,6 +1,7 @@
 package com.namics.oss.maven.summary;
 
 import org.apache.maven.plugin.AbstractMojo;
+import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
@@ -24,6 +25,10 @@ public class SummaryMojo extends AbstractMojo {
 	 */
 	@Parameter(defaultValue = "${project}", readonly = true, required = true)
 	protected MavenProject project;
+	
+	@Parameter(defaultValue = "true")
+	protected boolean failOnErrors;
+	
 	/**
 	 * The projects in the reactor for aggregation report.
 	 */
@@ -43,14 +48,13 @@ public class SummaryMojo extends AbstractMojo {
 	}
 
 	@Override
-	public void execute() {
+	public void execute() throws MojoExecutionException {
 		if (!hasReportDirectories()) {
 			return;
 		}
 		PluginConsoleLogger logger = new PluginConsoleLogger(getLog());
 		Report report = new SurefireReportAnalyser().analyse(getReportsDirectories(), logger);
 
-		logger.info("");
 		logger.info("------------------------------------------------------------------------");
 		logger.info("|  Test Report                                                         |");
 		logger.info("------------------------------------------------------------------------");
@@ -72,6 +76,9 @@ public class SummaryMojo extends AbstractMojo {
 		logger.info(format(" \tsuccess : %10.2f%% in %4.2f s", report.getTotalPercentage(), report.getTotalElapsedTime()));
 		logger.info("------------------------------------------------------------------------");
 
+		if ( failOnErrors){
+			throw new MojoExecutionException(this,"There where " + report.getTotalErrors() + " errors and " + report.getTotalFailures() + " failed tests"  , report.toString());
+		}
 		//		private List<ReportTestCase> testDetails;
 
 	}

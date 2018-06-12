@@ -8,6 +8,8 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.lang.String.format;
+
 /**
  * Report.
  *
@@ -136,5 +138,22 @@ public class Report implements Serializable {
 		           .filter(ReportTestCase::isHasFailure)
 		           .filter(c -> !"skipped".equalsIgnoreCase(c.getFailureType()))
 		           .collect(Collectors.toList());
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder print = new StringBuilder();
+		print.append("\n------------------------------------------------------------------------");
+		print.append("\n|  Test Report                                                         |");
+		print.append("\n------------------------------------------------------------------------");
+		this.getFailedTests().forEach(t -> print.append("\n").append(t.toString()));
+		print.append("\n------------------------------------------------------------------------");
+		print.append(format("\n \ttotal   : %10s", this.getTotalTests()));
+		print.append(format("\n \terrors  : %10s", this.getTotalErrors()));
+		print.append(format("\n \tfailed  : %10s", this.getTotalFailures()));
+		print.append(format("\n \tskipped : %10s", this.getTotalSkipped()));
+		print.append(format("\n \tsuccess : %10.2f%% in %4.2f s", this.getTotalPercentage(), this.getTotalElapsedTime()));
+		print.append("\n------------------------------------------------------------------------");
+		return print.toString();
 	}
 }
