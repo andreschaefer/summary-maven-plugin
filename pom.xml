@@ -6,7 +6,7 @@
 	<packaging>maven-plugin</packaging>
 	<groupId>com.namics.oss.maven</groupId>
 	<artifactId>summary-maven-plugin</artifactId>
-	<version>0.1.2-SNAPSHOT</version>
+	<version>0.1.2</version>
 
 	<name>Maven Summary Plugin</name>
 	<description>Plugin that gathers test report files creates a summery.</description>
