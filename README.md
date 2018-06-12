@@ -24,7 +24,7 @@ Add maven plugin to build declaration
 		<plugin>
 			<groupId>com.namics.oss.maven</groupId>
 			<artifactId>summary-maven-plugin</artifactId>
-			<version>0.1.1</version>
+			<version>0.1.2</version>
 		</plugin>
 	</plugins>
 </build>
