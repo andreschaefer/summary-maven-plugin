@@ -25,10 +25,10 @@ public class SummaryMojo extends AbstractMojo {
 	 */
 	@Parameter(defaultValue = "${project}", readonly = true, required = true)
 	protected MavenProject project;
-	
+
 	@Parameter(defaultValue = "true")
 	protected boolean failOnErrors;
-	
+
 	/**
 	 * The projects in the reactor for aggregation report.
 	 */
@@ -76,11 +76,11 @@ public class SummaryMojo extends AbstractMojo {
 		logger.info(format(" \tsuccess : %10.2f%% in %4.2f s", report.getTotalPercentage(), report.getTotalElapsedTime()));
 		logger.info("------------------------------------------------------------------------");
 
-		if ( failOnErrors){
-			throw new MojoExecutionException(this,"There where " + report.getTotalErrors() + " errors and " + report.getTotalFailures() + " failed tests"  , report.toString());
+		if (failOnErrors && (report.isErrors() || report.isFailures())) {
+			throw new MojoExecutionException(this,
+			                                 "There where " + report.getTotalErrors() + " errors and " + report.getTotalFailures() + " failed tests",
+			                                 report.toString());
 		}
-		//		private List<ReportTestCase> testDetails;
-
 	}
 
 	private boolean hasReportDirectories() {
