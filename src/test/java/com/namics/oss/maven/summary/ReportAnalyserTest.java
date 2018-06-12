@@ -31,5 +31,7 @@ public class ReportAnalyserTest {
 		assertThat(report, hasProperty("totalFailures", is(1L)));
 		assertThat(report, hasProperty("totalErrors", is(1L)));
 		assertThat(report, hasProperty("totalSkipped", is(7L)));
+
+		System.out.println(report);
 	}
 }
