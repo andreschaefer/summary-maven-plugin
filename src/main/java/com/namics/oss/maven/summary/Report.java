@@ -29,15 +29,15 @@ public class Report implements Serializable {
 	private List<ReportTestCase> testDetails;
 
 	public boolean isErrors() {
-		return totalErrors > 0;
+		return totalErrors > 0L;
 	}
 
 	public boolean isFailures() {
-		return totalFailures > 0;
+		return totalFailures > 0L;
 	}
 
 	public boolean isSkipped() {
-		return totalSkipped > 0;
+		return totalSkipped > 0L;
 	}
 
 

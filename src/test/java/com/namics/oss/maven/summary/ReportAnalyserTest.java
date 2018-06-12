@@ -13,6 +13,8 @@ import java.io.IOException;
 import static java.util.Arrays.asList;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 
 /**
@@ -33,5 +35,17 @@ public class ReportAnalyserTest {
 		assertThat(report, hasProperty("totalSkipped", is(7L)));
 
 		System.out.println(report);
+	}
+
+	@Test
+	public void isErrors() {
+		assertFalse(new Report().isErrors());
+		assertTrue(new Report().totalErrors(4).isErrors());
+	}
+	
+	@Test
+	public void isFailures() {
+		assertFalse(new Report().isFailures());
+		assertTrue(new Report().totalFailures(4).isFailures());
 	}
 }
